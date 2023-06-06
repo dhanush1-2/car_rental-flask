@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Admin</title>
+      <link rel="icon" href="images/fav icon.png" type="image/x-icon">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://kit.fontawesome.com/5bbc39a795.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+	  		<h1><a href="index.html" class="logo">Car Rental</a></h1>
+        <ul class="list-unstyled components mb-5">
+          
+          <li>
+              <a href="#"><span class="fa fa-user mr-3"></span> Users</a>
+          </li>
+          <li>
+            <a href="{{url_for('vehicledetails')}}"><span class="fa-solid fa-car mr-3"></span>   Vehicles</a>
+          </li>
+          <li>
+            <a href="{{url_for('bookingdetails')}}"><span class="fa-solid fa-clipboard mr-3"></span>   Bookings</a>
+          </li>
+          <li>
+            <a href="{{url_for('logoutadmin')}}"><span class="fa-solid fa-right-from-bracket mr-3"></span> Logout</a>
+          </li>
+
+
+        </ul>
+
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5" action="" method="GET">
+        <h2 class="mb-4" style="text-align:center">Details of Customers</h2>
+        
+          <table style="border:1px solid black; width:120% ;font-size:large;">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Address</th>
+                <th>city</th>
+                <th>Country</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in value %}
+              <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
+                <td>{{row[6]}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+
+      </div>
+		</div>
+
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/popper.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/main.js"></script>
+  </body>
+</html>
